@@ -6,11 +6,11 @@ const schema = require('./schema/schema');
 
 const app = express();
 
-require('dotenv').config();
+require('dotenv').config({path: '../.env'});
 const dbPw = process.env.MLAB_PASSWORD;
 
 app.use(cors());
-mongoose.connect('mongodb+srv://admin:xoOKAvQrBRIPvmvc@merntry.peg7i05.mongodb.net/?retryWrites=true&w=majority');
+mongoose.connect(`mongodb+srv://admin:${dbPw}@merntry.peg7i05.mongodb.net/?retryWrites=true&w=majority`);
 mongoose.connection.once('open', () => {
     console.log('connected to database');
 });
