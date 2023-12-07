@@ -22,7 +22,7 @@ function SearchFilmorDirectorComponent() {
         if (lf) return(<li>Loading..</li>);
         if (ef) return(<li>Error:  {ef.message}</li>);
 
-        if (df.searchFilm.length == 0) {
+        if (df.searchFilm.length === 0) {
             return (<li>No Result..</li>);
         }else{
             return (
@@ -38,7 +38,7 @@ function SearchFilmorDirectorComponent() {
         if (ld) return(<li>Loading..</li>);
         if (ed) return(<li>Error {ed.message}</li>);
 
-        if (dd.searchDirector.length == 0){
+        if (dd.searchDirector.length === 0){
             return (<li>No Result..</li>);
         }else {
             return (

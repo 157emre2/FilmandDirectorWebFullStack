@@ -6,7 +6,6 @@ import FilmListComponent from "../components/film/FilmListComponent";
 function FilmPage() {
     return (
         <div>
-            <NavbarComponent />
             <h1>Film Page</h1>
             <AddFilmComponent />
             <FilmListComponent />

@@ -6,7 +6,6 @@ import DirectorListComponent from "../components/director/DirectorListComponent"
 function DirectorPage() {
     return (
         <div>
-            <NavbarComponent />
             <h1>Director Page</h1>
             <AddDirectorComponent />
             <DirectorListComponent />
