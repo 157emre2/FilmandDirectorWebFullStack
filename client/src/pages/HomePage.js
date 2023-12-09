@@ -7,7 +7,6 @@ function HomePage() {
         <div>
             <ModalTitle>Home Page</ModalTitle>
             <SearchFiLmorDirectorComponent />
-            <p>You can see films and directors following the links which on the navbar.</p>
         </div>
     );
 }
