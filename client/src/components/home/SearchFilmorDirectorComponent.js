@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useQuery as uwu} from "@apollo/client";
 import { GET_SEARCH_FILMS, GET_SEARCH_DIRECTOR} from "../../query/queries";
+import {H3Title, H3TitleV2, StyledDiv, StyledInput, StyledUl, StyledUlV2} from "../styles/Styles";
 
 function SearchFilmorDirectorComponent() {
     const [searchInput, setSearchInput] = useState("");
@@ -51,21 +52,21 @@ function SearchFilmorDirectorComponent() {
 
     return (
         <div>
-            <input type="text" placeholder="Search Film or Director" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
-            <div>
+            <StyledInput type="text" placeholder="Search Film or Director" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+            <StyledDiv>
                 <div>
-                    <h3>Film List</h3>
-                    <ul>
+                    <H3TitleV2>Film List</H3TitleV2>
+                    <StyledUl>
                         { display_films() }
-                    </ul>
+                    </StyledUl>
                 </div>
                 <div>
-                    <h3>Director List</h3>
-                    <ul>
+                    <H3TitleV2>Director List</H3TitleV2>
+                    <StyledUl>
                         { display_directors() }
-                    </ul>
+                    </StyledUl>
                 </div>
-            </div>
+            </StyledDiv>
         </div>
     );
 }

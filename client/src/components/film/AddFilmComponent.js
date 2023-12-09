@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useQuery as uwu, useMutation as xx,} from "@apollo/client";
 import {GET_DIRECTORS, ADD_FILM_MUTATION, GET_FILMS} from '../../query/queries';
+import {AddDivStyle, H2Title, StyledForm} from "../styles/Styles";
 
 
 
@@ -34,9 +35,9 @@ function AddFilmComponent(){
     }
 
     return (
-        <div>
-            <h2>Add Film</h2>
-            <form onSubmit={(e) => {
+        <AddDivStyle>
+            <H2Title>Add Film</H2Title>
+            <StyledForm onSubmit={(e) => {
                 e.preventDefault();
                 add_film();
             }}>
@@ -50,7 +51,7 @@ function AddFilmComponent(){
                 </div>
                 <div>
                     <label htmlFor="fimdb">Film Imdb..:</label>
-                    <input type="number" id="fimdb" step="0.1" max="10" min="0" onChange={ (e) => setFormstate({...formstate, imdb: Number(e.target.value)})}/>
+                    <input type="number" id="fimdb" defaultValue={0} step="0.1" max="10" min="0" onChange={ (e) => setFormstate({...formstate, imdb: Number(e.target.value)})}/>
                 </div>
                 <div>
                     <label htmlFor="fdirector">Film Director..:</label>
@@ -60,8 +61,8 @@ function AddFilmComponent(){
                     </select>
                 </div>
                 <button type={"submit"}>+</button>
-            </form>
-        </div>
+            </StyledForm>
+        </AddDivStyle>
     );
 }
 

@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import {withTheme} from "styled-components";
+import {Button, Navbar, StyledLink} from "../styles/Styles";
+
 
 function NavbarComponent(props) {
     let newTheme = props.them === "light" ? "dark" : "light";
@@ -9,15 +10,15 @@ function NavbarComponent(props) {
     };
 
     return (
-        <nav>
+        <Navbar>
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/film">Film Page</Link></li>
-                <li><Link to="/director">Director Page</Link></li>
+                <li><StyledLink to="/" type={'secondary'}>Home</StyledLink></li>
+                <li><StyledLink to="/film" type={'secondary'}>Film Page</StyledLink></li>
+                <li><StyledLink to="/director" type={'secondary'}>Director Page</StyledLink></li>
             </ul>
-            <button onClick={setTheme}>Change Theme</button>
-        </nav>
+            <Button type={'primary'} onClick={setTheme}>Change Theme</Button>
+        </Navbar>
     );
 }
 
-export default withTheme(NavbarComponent);
+export default NavbarComponent;

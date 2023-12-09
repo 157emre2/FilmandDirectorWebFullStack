@@ -1,4 +1,4 @@
-const colors ={
+const colors = {
     primary_color: "#092635",
     secondary_color: "#1B4242",
     third_color: "#5C8374",
@@ -9,6 +9,7 @@ export const themeSettings = {
     light: {
         backgroundColor: colors.fourth_color,
         textColor: "black",
+        bodyBackgroundColor: "white",
         button: {
             primary: {
                 textColor: colors.fourth_color,
@@ -29,6 +30,7 @@ export const themeSettings = {
     dark: {
         backgroundColor: colors.primary_color,
         textColor: colors.fourth_color,
+        bodyBackgroundColor: colors.secondary_color,
         button: {
             primary: {
                 textColor: colors.primary_color,

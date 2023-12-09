@@ -21,8 +21,8 @@ const ADD_FILM_MUTATION = gql`
 const GET_FILMS = gql`
     {
         films {
-            name
             id
+            name
             genre
             imdb
             director{

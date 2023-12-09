@@ -2,6 +2,7 @@ import React from "react";
 import {useQuery as uwu} from "@apollo/client";
 import {GET_FILMS} from "../../query/queries";
 import {Link} from "react-router-dom";
+import {H2Title, H3Title, StyledLink, StyledP, StyledUl} from "../styles/Styles";
 
 function FilmListComponent() {
     function get_films() {
@@ -12,20 +13,20 @@ function FilmListComponent() {
 
 
         return data.films.slice().reverse().map(f => {
-            return(<li key={f.id} value={f.id}>
-                <h3><Link hrefLang="#">{f.name}</Link></h3>
-                <p>{f.genre}</p>
-                <p>{f.imdb}</p>
-                <p>{f.director.name}</p>
+            return(<li  key={f.id} value={f.id}>
+                <H3Title><StyledLink type={'secondary'} hrefLang="#">{f.name}</StyledLink></H3Title>
+                <StyledP>{f.genre}</StyledP>
+                <StyledP>{f.imdb}</StyledP>
+                <StyledP>{f.director.name}</StyledP>
             </li> )
         });
     }
     return (
         <div>
-            <h2>Film List</h2>
-            <ul>
+            <H2Title>Film List</H2Title>
+            <StyledUl>
                 { get_films() }
-            </ul>
+            </StyledUl>
         </div>
     );
 }

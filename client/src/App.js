@@ -7,6 +7,7 @@ import { ThemeProvider} from "styled-components";
 import {themeSettings} from "./theme";
 import NavbarComponent from "./components/common/NavbarComponent";
 import {useState} from "react";
+import {StyledContainer} from "./components/styles/Styles";
 
 
 function App() {
@@ -19,15 +20,18 @@ function App() {
       <div>
         <GlobalStyle />
           <ThemeProvider theme={themeSettings[the]}>
-              <Router>
-                  <NavbarComponent updateTheme={updateTheme} them={the} />
-                  <Routes>
-                      <Route path="/" element={<HomePage />} />
-                      <Route path="/film" element={<FilmPage />}/>
-                      <Route path="/director" element={<DirectorPage />}/>
-                      <Route path="*" element={<Navigate to="/"/>}/>
-                  </Routes>
-              </Router>
+              <StyledContainer>
+                  <Router>
+                      <NavbarComponent updateTheme={updateTheme} them={the} />
+                      <Routes>
+                          <Route path="/" element={<HomePage />} />
+                          <Route path="/film" element={<FilmPage />}/>
+                          <Route path="/director" element={<DirectorPage />}/>
+                          <Route path="*" element={<Navigate to="/"/>}/>
+                      </Routes>
+                  </Router>
+              </StyledContainer>
+
           </ThemeProvider>
       </div>
   );

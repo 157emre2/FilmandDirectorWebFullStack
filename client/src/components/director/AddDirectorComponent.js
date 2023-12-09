@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {useMutation as xx} from "@apollo/client";
 import {GET_DIRECTORS, ADD_DIRECTOR_MUTATION} from "../../query/queries";
+import {AddDivStyle, H2Title, StyledForm} from "../styles/Styles";
 
 function AddDirectorComponent() {
     const [formState, setFormState] = useState({
@@ -17,9 +18,9 @@ function AddDirectorComponent() {
     })
 
     return(
-        <div>
-            <h2>Add Director</h2>
-            <form onSubmit={(e) => {
+        <AddDivStyle>
+            <H2Title>Add Director</H2Title>
+            <StyledForm onSubmit={(e) => {
                 e.preventDefault();
                 add_director();
             }}>
@@ -29,11 +30,11 @@ function AddDirectorComponent() {
                 </div>
                 <div>
                     <label htmlFor="dage">Director Age..:</label>
-                    <input type="number" min="0" id="dage" onChange={(e) => setFormState({...formState, age: Number(e.target.value)})}/>
+                    <input defaultValue={0} type="number" min="0" id="dage" onChange={(e) => setFormState({...formState, age: Number(e.target.value)})}/>
                 </div>
                 <button type="submit">+</button>
-            </form>
-        </div>
+            </StyledForm>
+        </AddDivStyle>
     );
 }
 
